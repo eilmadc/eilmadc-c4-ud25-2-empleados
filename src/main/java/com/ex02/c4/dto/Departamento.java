@@ -46,7 +46,6 @@ public class Departamento {
 	 * @param codigo
 	 * @param nombre
 	 * @param presupuesto
-	 * @param empleado
 	 */
 	public Departamento(int codigo, String nombre, int presupuesto) {
 		this.codigo = codigo;

@@ -65,7 +65,7 @@ public class DepartamentoController {
 	}
 	
 	@DeleteMapping("/departamentos/{codigo}")
-	public void eleiminarDepartamento(@PathVariable(name="codigo")int codigo) {
+	public void deleteDepartamento(@PathVariable(name="codigo")int codigo) {
 		departamentoServiceImpl.deleteDepartamento(codigo);
 	}
 	

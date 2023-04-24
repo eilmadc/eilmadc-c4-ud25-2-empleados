@@ -51,6 +51,7 @@ public class DepartamentoServiceImpl implements DepartamentoService {
 	public void deleteDepartamento(int id) {
 		// TODO Auto-generated method stub
 		
+		iDepartamentoDAO.deleteById(id);
 	}
 
 }
