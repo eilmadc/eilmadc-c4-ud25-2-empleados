@@ -23,5 +23,5 @@ public interface EmpleadoService {
 
 	public void deleteEmpleadoByDni(String dni);
 
-	public Empleado empleadoXID(String dni);
+	public Empleado empleadoByDni(String dni);
 }

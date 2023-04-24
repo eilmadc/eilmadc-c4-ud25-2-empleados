@@ -35,9 +35,9 @@ public class DepartamentoServiceImpl implements DepartamentoService {
 	}
 
 	@Override
-	public Departamento departamentoXID(Long id) {
+	public Departamento departamentoXID(int codigo) {
 
-		return iDepartamentoDAO.findById(id).get();
+		return iDepartamentoDAO.findById(codigo).get();
 	}
 
 	@Override
@@ -46,10 +46,11 @@ public class DepartamentoServiceImpl implements DepartamentoService {
 		return iDepartamentoDAO.save(departamento);
 	}
 
-	@Override
-	public void deleteDepartamento(Long id) {
 
-		iDepartamentoDAO.deleteById(id);
+	@Override
+	public void deleteDepartamento(int id) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

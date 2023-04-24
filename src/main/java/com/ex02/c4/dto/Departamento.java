@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -27,14 +28,14 @@ public class Departamento {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long codigo;
+	private int codigo;
 	@Column(name = "nombre")
 	private String nombre;
 	@Column(name = "presupuesto")
 	private int presupuesto;
 
 	@OneToMany
-	@JoinColumn(name = "dni")
+	@JoinColumn(name = "departamento")
 	private List<Empleado> empleado;
 
 	public Departamento() {
@@ -47,8 +48,7 @@ public class Departamento {
 	 * @param presupuesto
 	 * @param empleado
 	 */
-	public Departamento(Long codigo, String nombre, int presupuesto) {
-		super();
+	public Departamento(int codigo, String nombre, int presupuesto) {
 		this.codigo = codigo;
 		this.nombre = nombre;
 		this.presupuesto = presupuesto;
@@ -57,14 +57,14 @@ public class Departamento {
 	/**
 	 * @return the codigo
 	 */
-	public Long getCodigo() {
+	public int getCodigo() {
 		return codigo;
 	}
 
 	/**
 	 * @param codigo the codigo to set
 	 */
-	public void setCodigo(Long codigo) {
+	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
 
@@ -101,7 +101,7 @@ public class Departamento {
 	 */
 	
 	@JsonIgnore
-	@OneToMany(fetch = jakarta.persistence.FetchType.LAZY, mappedBy = "empleado")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "Empleado")
 	public List<Empleado> getEmpleado() {
 		return empleado;
 	}
@@ -119,4 +119,5 @@ public class Departamento {
 				+ empleado + "]";
 	}
 
+	
 }

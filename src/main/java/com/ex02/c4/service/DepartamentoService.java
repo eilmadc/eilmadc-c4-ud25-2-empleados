@@ -17,9 +17,9 @@ public interface DepartamentoService {
 	
 	public Departamento saveDepartamento(Departamento departamento);
 	
-	public Departamento departamentoXID(Long id);
+	public Departamento departamentoXID(int id);
 	
 	public Departamento updateDepartamento(Departamento departamento); 
 	
-	public void deleteDepartamento(Long id);
+	public void deleteDepartamento(int id);
 }

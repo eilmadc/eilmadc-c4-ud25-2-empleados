@@ -41,25 +41,19 @@ public class DepartamentoController {
 		return departamentoServiceImpl.saveDepartamento(departamento);
 	}
 	
-	@GetMapping("/departamentos/{id}")
-	public Departamento departamentoXID(@PathVariable(name="id") Long id) {
+	@GetMapping("/departamentos/{codigo}")
+	public Departamento departamentoXID(@PathVariable(name="codigo") int codigo) {
 		
-		Departamento departamento_xid= new Departamento();
-		
-		departamento_xid=departamentoServiceImpl.departamentoXID(id);
-		
-		System.out.println("Departamento XID: "+departamento_xid);
-		
-		return departamento_xid;
+		return departamentoServiceImpl.departamentoXID(codigo);
 	}
 	
-	@PutMapping("/departamentos/{id}")
-	public Departamento updateDepartamento(@PathVariable(name="id")Long id,@RequestBody Departamento departamento) {
+	@PutMapping("/departamentos/{codigo}")
+	public Departamento updateDepartamento(@PathVariable(name="codigo")int codigo,@RequestBody Departamento departamento) {
 		
 		Departamento departamento_seleccionado= new Departamento();
 		Departamento departamento_actualizado= new Departamento();
 		
-		departamento_seleccionado= departamentoServiceImpl.departamentoXID(id);
+		departamento_seleccionado= departamentoServiceImpl.departamentoXID(codigo);
 		
 		departamento_seleccionado.setNombre(departamento.getNombre());
 		departamento_seleccionado.setPresupuesto(departamento.getPresupuesto());
@@ -70,9 +64,9 @@ public class DepartamentoController {
 		return departamento_actualizado;
 	}
 	
-	@DeleteMapping("/departamentos/{id}")
-	public void eleiminarDepartamento(@PathVariable(name="id")Long id) {
-		departamentoServiceImpl.deleteDepartamento(id);
+	@DeleteMapping("/departamentos/{codigo}")
+	public void eleiminarDepartamento(@PathVariable(name="codigo")int codigo) {
+		departamentoServiceImpl.deleteDepartamento(codigo);
 	}
 	
 	

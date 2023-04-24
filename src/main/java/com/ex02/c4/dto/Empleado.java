@@ -22,7 +22,7 @@ import jakarta.persistence.Table;
 public class Empleado {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="dni")
 	private String dni;
 	@Column(name = "nombre")
 	private String nombre;
@@ -44,7 +44,7 @@ public class Empleado {
 	 * @param departamento
 	 */
 	public Empleado(String dni, String nombre, String apellidos, Departamento departamento) {
-		super();
+		//super();
 		this.dni = dni;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
@@ -112,6 +112,5 @@ public class Empleado {
 		return "Empleado [dni=" + dni + ", nombre=" + nombre + ", apellidos=" + apellidos + ", departamento="
 				+ departamento + "]";
 	}
-	
 	
 }

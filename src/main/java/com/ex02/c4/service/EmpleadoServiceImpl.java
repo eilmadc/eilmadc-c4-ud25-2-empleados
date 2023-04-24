@@ -24,31 +24,31 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 
 	@Override
 	public List<Empleado> listEmpleados() {
-		// TODO Auto-generated method stub
+		
 		return iEmpleadoDAO.findAll();
 	}
 
 	@Override
 	public Empleado saveEmpleado(Empleado empleado) {
-		// TODO Auto-generated method stub
+		System.out.println("***** Este empleado : "+empleado);
 		return iEmpleadoDAO.save(empleado);
 	}
 
 	@Override
-	public Empleado empleadoXID(String dni) {
-		// TODO Auto-generated method stub
+	public Empleado empleadoByDni(String dni) {
+		
 		return iEmpleadoDAO.findByDni(dni).get();
 	}
 
 	@Override
 	public Empleado updateEmpleado(Empleado empleado) {
-		// TODO Auto-generated method stub
+		
 		return iEmpleadoDAO.save(empleado);
 	}
 
 	@Override
 	public void deleteEmpleadoByDni(String dni) {
-		// TODO Auto-generated method stub
+		
 		iEmpleadoDAO.deleteByDni(dni);
 	}
 
